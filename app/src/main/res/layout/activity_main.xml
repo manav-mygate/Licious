@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent">
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/clHeader"
+      app:layout_constraintTop_toTopOf="parent"
+      android:layout_width="match_parent"
+      android:background="#4C4F50"
+      android:paddingTop="10dp"
+      android:paddingBottom="10dp"
+      android:layout_height="wrap_content">
+    <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:paddingLeft="10dp"
+        android:src="@drawable/ic_keyboard_arrow_left"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Favoutite Items"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/tvHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/llSlots"
+        app:layout_constraintTop_toBottomOf="@+id/clHeader"
+        android:layout_marginTop="15dp"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="All Available Slot"
+            android:id="@+id/tvAllSlots"
+            android:layout_weight="1"
+            android:background="@drawable/bg_unselected"
+            android:gravity="center"
+            android:textColor="#6C6D70"
+            android:textSize="12sp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="10dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="Today in 120 min"
+            android:id="@+id/tvToday"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/bg_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvFavTxt"
+        app:layout_constraintTop_toBottomOf="@+id/llSlots"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:text="Your favourite items"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvItemsCount"
+        app:layout_constraintTop_toBottomOf="@+id/llSlots"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="12dp"
+        android:text="(17 items)"
+        android:textColor="#6C6D70"
+        app:layout_constraintTop_toTopOf="@id/tvFavTxt"
+        app:layout_constraintBottom_toBottomOf="@id/tvFavTxt"
+        android:layout_height="wrap_content"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        tools:listitem="@layout/item_food"
+        tools:itemCount="5"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvFavTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="200dp"
+        android:clipToPadding="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
